@@ -1,4 +1,5 @@
-/.md
+/README.md
+/.gitgnore
 /__pycache__
 /.idea
 /test.db
