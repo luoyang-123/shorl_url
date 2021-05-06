@@ -96,10 +96,8 @@ def get_buohao_index():
     result = cursor.execute(sql)
     index = result.lastrowid
     conn.commit()
-
-
     cursor.close()
-    print(1)
+    print(index)
     return index*100
 
 
