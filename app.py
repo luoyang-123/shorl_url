@@ -3,8 +3,8 @@ from utils import base62_decode, base62_encode
 from db import get_buohao_index, add_url, get_long_url
 
 app = Flask(__name__)
-toekn,index=0,0
-
+index = get_buohao_index()
+toekn=index-100
 @app.route('/', methods=['POST', 'GET'])
 def index():
     global toekn,index
@@ -12,9 +12,6 @@ def index():
         return render_template('index.html')
     else:
         url = request.form['url']
-        if toekn==0:
-            index = get_buohao_index()
-            toekn=index-100
         if toekn==index:
             index = get_buohao_index()
             print(index)
